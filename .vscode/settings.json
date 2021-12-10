@@ -1,0 +1,9 @@
+{
+    "editor.wordWrapColumn": 150,
+    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "Fira Mono",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.cursorBlinking": "expand"
+}

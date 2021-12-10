@@ -1,0 +1,37 @@
+{% extends 'store/main.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<title>{% block title %}Xcom - Home{% endblock %}</title>
+{% block content %}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" style=" font-family:'Poppins', sans serif;background:background-color:rgb(233, 181, 181);">
+        <strong>{{ message }}</strong>  
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="margin-left:1200px; border:none; position:absolute; left:680px; top: 10px"><i class="fas fa-times"></i></button>
+    </div>     
+{% endfor %}
+
+<div class="container">
+	<p class="heading">Trending Deal's</p>
+</div>
+<div class="container">
+   <div class="row" style="margin-top:40px;">
+		{% for product in products|slice:"0:6" %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{product.imageURL}}">
+			<div class="box-element product">
+				<h6><strong>{{product.name}}</strong></h6>
+				<hr>
+				<button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				<a class="btn btn-outline-success" href="{% url 'product_view' product.name %}">View</a>
+				<h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock content %}
+
+

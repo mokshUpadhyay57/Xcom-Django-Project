@@ -1,0 +1,63 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<title>{% block title %}Xcom - Sign Up{% endblock %}</title>
+{% block content %}
+
+
+<div class="container myCard" >    
+    <div class="mycontainer">
+        <h1 class="title">Create an account</h1>
+        <div class="content">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="user-details">      
+                    <div class="input-box">
+                        <span class="details">{{form.first_name.label}}</span> 
+                        {{form.first_name}}
+                    </div>
+                    <div class="input-box">
+                        <span class="details">{{form.last_name.label}}</span>
+                        {{form.last_name}}
+
+                    </div>
+                    <div class="input-box">
+                        <span class="details">{{form.username.label}}</span>
+                        {{form.username}}
+                    </div>
+                    <div class="input-box">
+                        <span class="details">{{form.email.label}}</span>
+                        {{form.email}}
+                    </div>
+                    <div class="input-box">
+                        <span class="details">{{form.password1.label}}</span>
+                        {{form.password1}}
+                    </div>
+                    <div class="input-box">
+                        <span class="details">{{form.password2.label}}</span>
+                        {{form.password2}}
+                    </div> 
+                </div>
+                <button type="submit" class="button" >Create Account</button>
+                {{form.errors}}
+                <div class="login_link">
+                    Already have an account? <a href="{% url 'login' %}">Login</a>
+                </div>
+            </form>
+        </div>
+</div>
+
+
+
+<script>
+    var form_fields = document.getElementsByTagName('input');
+    form_fields[3].placeholder= 'Enter firstname';
+    form_fields[4].placeholder= 'Enter lastname';
+    form_fields[5].placeholder= 'Enter your unique username';
+    form_fields[6].placeholder= 'Enter email';
+    form_fields[7].placeholder= 'Enter password';
+    form_fields[8].placeholder= 'Confirm password';
+</script>
+
+{% endblock content %}

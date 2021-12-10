@@ -1,0 +1,37 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<title>{% block title %}Xcom - Login{% endblock %}</title>
+
+
+{% block content%}
+<div class="center">
+    <h1 style="font-size:28px;">Login</h1>
+    <form method="POST">
+    {% csrf_token %}
+        <div class="txt_field">
+            <input type="text" name="loginusername" required>
+            <span></span>
+            <label>Username</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="loginpassword" required>
+            <span></span>
+            <label>Password</label>
+         
+        </div>
+        <div class="pass"><a class="pass" href="{% url 'forgot' %}" >Forgot Password?</a></div>
+        <input type="submit" value="Login" >
+        <div class="signup_link">
+            Not a member? <a href="{% url 'signup' %}">Sign Up</a>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+{% endblock content%}
