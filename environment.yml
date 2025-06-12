@@ -1,0 +1,7 @@
+name: xcom-env
+channels:
+  - defaults
+dependencies:
+  - django
+  - pillow
+prefix: /home/moksh/miniconda3/envs/xcom-env
