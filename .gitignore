@@ -1,0 +1,43 @@
+# Byte-compiled / cache
+store/__pycache__/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django migrations
+**/migrations/
+!*/migrations/__init__.py
+
+# Environment files
+.env
+*.env
+*.sqlite3
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Virtual environments
+venv/
+env/
+*.egg-info/
+
+# Coverage / Testing
+htmlcov/
+.coverage
+.tox/
+
+# Media/static files (optional)
+media/
+staticfiles/
+
+# Database
+db.sqlite3
+
